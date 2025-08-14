@@ -62,21 +62,21 @@ function App() {
                     <source
                       className="list__item__picture"
                       media="(min-width: 1216px)"
-                      srcSet="/images/image-waffle-desktop.jpg"
+                      srcSet={item.image.desktop}
                     />
                     <source
                       className="list__item__picture"
                       media="(min-width: 768px)"
-                      srcSet="/images/image-waffle-tablet.jpg"
+                      srcSet={item.image.tablet}
                     />
                     <source
                       className="list__item__picture"
                       media="(max-width: 375px)"
-                      srcSet="/images/image-waffle-mobile.jpg"
+                      srcSet={item.image.mobile}
                     />
                     <img
                       className="list__item__picture"
-                      src="/images/image-waffle-thumbnail.jpg"
+                      src={item.image.thumbnail}
                       alt={item.name}
                       width={250}
                       height={240}
@@ -150,8 +150,10 @@ function App() {
               })}
             </ul>
           )}
-          <div>
-            <h2></h2>
+          <div className="carbon__box">
+            <h2 className="carbon__neutral">
+              This is a carbon-neutral delivery
+            </h2>
           </div>
         </div>
       </div>
