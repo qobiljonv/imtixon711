@@ -1,68 +1,240 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+/* red-hat-text-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Red Hat Text";
+  font-style: normal;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  src: url("../fonts/red-hat-text-v18-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+/* red-hat-text-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Red Hat Text";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/red-hat-text-v18-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-a:hover {
-  color: #535bf2;
+/* red-hat-text-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Red Hat Text";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/red-hat-text-v18-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* @import "tailwindcss";
+@plugin "daisyui"; */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
+  font-family: "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode",
+    Verdana, sans-serif;
+  font-weight: 600;
+  background-color: #fcf8f6;
+}
+figure,
+picture {
   margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1216px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.container-card {
+  padding-bottom: 88px;
+  padding-top: 88px;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  gap: 32px;
+  justify-content: space-between;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.container__box__logo {
+  font-size: 56px;
+  font-weight: 700;
+  padding-bottom: 32px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.container__box__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 32px;
+  column-gap: 24px;
+  list-style: none;
+  padding-left: 0;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.list__item__picture {
+  border-radius: 10px;
+}
+
+.list__item {
+  list-style-type: none;
+}
+.item__btn {
+  position: absolute;
+  margin-left: 50px;
+  margin-top: -28px;
+
+  padding: 12px 28px;
+  border-color: rgb(185, 152, 147);
+  border-radius: 999px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.item__btn {
+}
+
+.dessert-btn-add {
+  padding: 9px 12px;
+  border: 2px solid rgba(199, 59, 15, 1);
+  width: 100%;
+  max-width: 125px;
+  border-radius: 999px;
+  background-color: rgba(199, 59, 15, 1);
+  display: flex;
+  justify-content: center;
+
+  gap: 8px;
+  position: absolute;
+  margin-left: 49px;
+  margin-top: -28px;
+}
+
+.btn-remove-amount {
+  background-color: transparent;
+  border: 0;
+  margin-right: auto;
+}
+.amount {
+  align-items: center;
+  color: #ffffff;
+}
+.btn-add-amount {
+  margin-left: auto;
+  background-color: transparent;
+  border: 0;
+}
+
+.item__name {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+  color: rgba(135, 99, 90, 1);
+  padding-top: 32px;
+  padding-bottom: 4px;
+}
+
+.item__description {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 150%;
+  padding-bottom: 4px;
+}
+
+.item__prise {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 150%;
+  color: rgba(199, 59, 15, 1);
+}
+
+.content-box {
+  border-radius: 12px;
+  padding: 24px;
+  width: 100%;
+
+  height: 300px;
+  background-color: rgba(255, 255, 255, 1);
+}
+.box-title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 120%;
+  color: rgba(199, 59, 15, 1);
+  padding-bottom: 24px;
+}
+.box-image {
+  display: block;
+  width: 128px;
+  margin: 0 auto;
+}
+
+.box-content {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.box-text {
+  color: rgba(135, 99, 90, 1);
+
+  text-align: center;
+}
+
+.box__list {
+  list-style: none;
+  color: #260f08;
+}
+
+.box__item {
+}
+
+.item__title {
+  font-size: 14px;
+  font-weight: 600;
+  padding-bottom: 8px;
+}
+
+.item__counter {
+  font-size: 14px;
+  font-weight: 600;
+  color: #c73b0f;
+}
+
+.box__item__prise {
+  color: #87635a;
+}
+
+.hr {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 870px) {
+  .container-card {
+    flex-direction: column;
   }
-  a:hover {
-    color: #747bff;
+  .container {
+    padding-left: 30px;
+    padding-right: 30px;
   }
-  button {
-    background-color: #f9f9f9;
+}
+@media (max-width: 450px) {
+  .container__box__list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .dessert-btn-add {
+    margin-left: 50px;
   }
 }
